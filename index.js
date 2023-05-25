@@ -341,9 +341,9 @@ function platformaGoreCokGonderiYapanFenomen(fenomenlerGönderiListesi,platformA
         profilName.push(platformPostsList[sayac].profile);
         sayac++;
   }
-  let deger = Math.max(...postCount);
-  let indexBul = postCount.indexOf(deger);
-  return profilName[indexBul];
+
+  let indexNum = postCount.indexOf(Math.max(...postCount));
+  return profilName[indexNum];
 }
 console.log("Platforma göre en çok gönderi yapan fenomen : ",platformaGoreCokGonderiYapanFenomen(fenomenler,"Twitter"));
 

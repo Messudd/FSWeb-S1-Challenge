@@ -315,7 +315,8 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
-
+//########################################################################################################
+/*
 function platformaGoreCokGonderiYapanFenomen(fenomenlerGönderiListesi,platformAdi){
 
   const platformPostsList = [];
@@ -347,6 +348,26 @@ function platformaGoreCokGonderiYapanFenomen(fenomenlerGönderiListesi,platformA
   let indexNum = postCount.indexOf(Math.max(...postCount));
   return profilName[indexNum];
 }
+console.log("Platforma göre en çok gönderi yapan fenomen : ",platformaGoreCokGonderiYapanFenomen(fenomenler,"Twitter"));
+*/
+//############################################################################################################
+
+function platformaGoreCokGonderiYapanFenomen(fenomenlerGönderiListesi,platformAdi){
+
+    let profil = ""; 
+    let maxPostKisisi = 0;
+
+    for (let i =0; i<fenomenlerGönderiListesi.length;i++)
+    {
+        if(fenomenlerGönderiListesi[i].platform === platformAdi && fenomenlerGönderiListesi[i].posts != "NA" && maxPostKisisi<fenomenlerGönderiListesi[i].posts )
+        {
+              maxPostKisisi = fenomenlerGönderiListesi[i].posts; 
+              profil = fenomenlerGönderiListesi[i].profile;   
+        } 
+    } 
+    return profil;
+  }
+
 console.log("Platforma göre en çok gönderi yapan fenomen : ",platformaGoreCokGonderiYapanFenomen(fenomenler,"Twitter"));
 
 /* ***** GÖREVLERİN SONU ***** */

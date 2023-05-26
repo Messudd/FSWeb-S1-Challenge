@@ -156,9 +156,11 @@ console.log("Dizideki ilk fenomenin profili : ",fenomenler[0].profile);
 
 console.log("Dizideki ikinci fenomenin takipçisi : ",fenomenler[2].followers);
 
+// Justin Bieber //
 
-fenomenler[7].profile = "Justin Bieber";
-console.log("Düzeltilmiş Biber :) ",fenomenler[7]);
+fenomenler.splice(6,1,{"number":2,"profile":"Justin Bieber","followers":114165664,"posts":31371,"platform":"Twitter"});
+console.log("Düzeltilmiş Biber :) ",fenomenler[6]);
+
 
 /* Görev 2 (otomatik kontrol testi yapılmayacak):
 (işlev yazmanıza gerek yok)
@@ -334,12 +336,12 @@ function platformaGoreCokGonderiYapanFenomen(fenomenlerGönderiListesi,platformA
         postCount.push(platformPostsList[pos].posts);
         pos++;
   }
-  let sayac = 0;
+  pos = 0;
 
-  while (sayac<platformPostsList.length)
+  while (pos<platformPostsList.length)
   {
-        profilName.push(platformPostsList[sayac].profile);
-        sayac++;
+        profilName.push(platformPostsList[pos].profile);
+        pos++;
   }
 
   let indexNum = postCount.indexOf(Math.max(...postCount));
